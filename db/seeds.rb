@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.new(email: "testemail.yahoo.never").save
+a = User.first
+ShortenedUrl.create!(a,"Hohohoh")
+b = ShortenedUrl.first
+Visit.record_visit!(a,b)
+User.new(email: "2ndemail.yahoo.never").save
+a = User.last
+ShortenedUrl.create!(a,"Noooooo")
+b = ShortenedUrl.last
+Visit.record_visit!(a,b)
+a = User.first
+b = ShortenedUrl.last
+Visit.record_visit!(a,b)
